@@ -2,61 +2,88 @@ class region():
     def __init__(self, place):
         self.place = place
 
-    def describe(self):
-        if self.place == "forest":
-            print("THE FOREST:\nFull of trees.\n\nResources:")
-        if self.place == "river":
-            print("THE RIVER:\nA steady stream of water.\n\nResources:")
-        if self.place == "mountains":
-            print("THE MOUNTAINS:\nA giant hunk of rock.\n\nResources:")
-        if self.place == "plains":
-            print("THE PLAINS:\nA whole load of nothing but grass.\n\nResources:")
-        self.show_resources()
-        print("\nAnimals:")
-        self.show_animals()
-        
-
-    def show_animals(self):
-        if self.place == "forest":
-            animals = (['Deer', 'Bird', 'Fox'])
-        if self.place == "river":
-            animals = (['Salmon', 'Cod'])
-        if self.place == "mountain":
-            animals = (['Mountain Goat', 'Bird'])
-        if self.place == "plains":
-            animals = (['Bird', 'Sheep'])
-        for animal in animals:
-            print(animal)
-
-    def show_resources(self):
-        if self.place == "forest":
-            resources = (['Wood', 'Wild Berry', 'Stick'])
-        if self.place == "river":
-            resources = (['Water', 'Clay', 'Reeds'])
-        if self.place == "mountains":
-            resources = (['Rock', 'Flint', 'Spring Water'])
-        if self.place == "plains":
-            resources = (['Twine', 'Corn', 'Dried Leaves'])
-        for resource in resources:
-            print(resource)
-
-class forest2(region):
+class forest(region):
     def __init__(self, place):
         region.__init__(self, place)
         self.resources = (['Wood', 'Wild Berry', 'Stick'])
-    
+        self.animals = (['Deer', 'Bird', 'Fox'])
+
     def show_resources(self):
-        print("Boo!")
         for resource in self.resources:
             print(resource)
-
             
-forest = region("forest")
-river = region("river")
-mountains = region("mountains")
-plains = region("plains")
-# forest.describe()
+    def show_animals(self):
+        for animal in self.animals:
+            print(animal)
 
-forest_new = forest2("forest")
-forest_new.describe()
-plains.describe()
+    def description(self):
+        print("THE FOREST:\nFull of trees.\n\nResources:")
+        self.show_resources
+        print("Animals:")
+        self.show_animals
+
+class river(region):
+    def __init__(self, place):
+        region.__init__(self, place)
+        self.resources = (['Water', 'Clay', 'Reeds'])
+        self.animals = (['Salmon', 'Cod'])
+
+    def show_resources(self):
+        for resource in self.resources:
+            print(resource)
+            
+    def show_animals(self):
+        for animal in self.animals:
+            print(animal)
+
+    def description(self):
+        print("THE RIVER:\nA steady steam of water.\n\nResources:")
+        self.show_resources
+        print("Animals:")
+        self.show_animals
+
+class mountain(region):
+    def __init__(self, place):
+        region.__init__(self, place)
+        self.resources = (['Wood', 'Wild Berry', 'Stick'])
+        self.animals = (['Rock', 'Flint', 'Spring Water'])
+
+    def show_resources(self):
+        for resource in self.resources:
+            print(resource)
+            
+    def show_animals(self):
+        for animal in self.animals:
+            print(animal)
+
+    def description(self):
+        print("THE MOUNTAINS:\nA giant hunk of rock.\n\nResources:")
+        self.show_resources
+        print("Animals:")
+        self.show_animals
+
+class plains(region):
+    def __init__(self, place):
+        region.__init__(self, place)
+        self.resources = (['Twine', 'Corn', 'Dried Leaves'])
+        self.animals = (['Bird', 'Sheep'])
+
+    def show_resources(self):
+        for resource in self.resources:
+            print(resource)
+            
+    def show_animals(self):
+        for animal in self.animals:
+            print(animal)
+
+    def description(self):
+        print("THE PLAINS:\nA whole load of nothing but grass.\n\nResources:")
+        self.show_resources
+        print("Animals:")
+        self.show_animals
+            
+forest = forest("forest")
+river = river("river")
+mountain = mountain("mountains")
+plains = plains("plains")
+
