@@ -81,8 +81,10 @@ class plains(region):
         self.show_resources()
         print("Animals:")
         self.show_animals()
-# regions           
-forest = forest("forest")
-river = river("river")
-mountain = mountain("mountains")
-plains = plains("plains")
+    
+class world():
+    def __init__(self):
+        self.forest = forest("forest")
+        self.river = river("river")
+        self.mountain = mountain("mountain")
+        self.plains = plains("plains")
