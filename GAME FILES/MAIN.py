@@ -2,7 +2,8 @@ from Regions import *
 from Player import *
 
 gameworld = world()
-p1 = player("p1")
-p2 = player("p2")
+p1 = player("Player 1")
+p2 = player("Player 2")
 
-p1.increase_hunger(10)
+print("Hi! Thanks for downloading my game, The Forbidden Realm.")
+
