@@ -1,4 +1,6 @@
 import time
+
+
 class player:
 
     def __init__(self, name):
@@ -28,21 +30,20 @@ class player:
         else:
             self.hunger += amount
         if self.hunger > 100:
-            print("{}, you are to bloated! You lose {} health!".format(self.name, amount))
+            print("{}, you are to bloated! You lose {} health!".format(
+                self.name, amount))
             self.hunger = 100
             self.health -= amount
-    
+
     def decrease_hunger(self, amount):
         self.hunger -= amount
         if self.hunger < 0:
             self.hunger = 0
 
     def turnly_decrease(self):
-        decrease_hunger(3)
+        self.decrease_hunger(3)
         print("{}, your hunger is now {}!".format(self.name, self.hunger))
-        if hunger < 5:
-            decrease_health(2)
-            print("Oh no {}, your are hungry. Your health is now {}".format(self.name, self.health))
-
-   
-        
+        if self.hunger < 5:
+            self.decrease_health(2)
+            print("Oh no {}, you are hungry. Your health is now {}".format(
+                self.name, self.health))
