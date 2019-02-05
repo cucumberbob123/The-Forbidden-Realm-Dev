@@ -25,8 +25,8 @@ class Region():
 class Forest(Region):
     def __init__(self, place):
         self.place = place
-        self.resources = (["Wood", "Wild Berry", "Stick"])
-        self.animals = (["Deer", "Bird", "Fox"])
+        self.resources = ["Wood", "Wild Berry", "Stick"]
+        self.animals = ["Deer", "Bird", "Fox"]
 
         self.description = "Full of trees."
 
@@ -36,8 +36,8 @@ class Forest(Region):
 class River(Region):
     def __init__(self, place):
         self.place = place
-        self.resources = (["Water", "Clay", "Reeds"])
-        self.animals = (["Salmon", "Cod"])
+        self.resources = ["Water", "Clay", "Reeds"]
+        self.animals = ["Salmon", "Cod"]
         self.description = "A steady steam of water."
 
         super().__init__(self.place, self.resources, self.animals, self.description)
@@ -46,8 +46,8 @@ class River(Region):
 class Mountain(Region):
     def __init__(self, place):
         self.place = place
-        self.resources = (["Rock", "Flint", "Spring Water"])
-        self.animals = (["Mountain Goat", "Bird"])
+        self.resources = ["Rock", "Flint", "Spring Water"]
+        self.animals = ["Mountain Goat", "Bird"]
         self.description = "A giant hunk of rock."
         super().__init__(self.place, self.resources, self.animals, self.description)
 
@@ -55,8 +55,8 @@ class Mountain(Region):
 class Plains(Region):
     def __init__(self, place):
         self.place = place
-        self.resources = (["Twine", "Corn", "Dried Leaves"])
-        self.animals = (["Bird", "Sheep"])
+        self.resources = ["Twine", "Corn", "Dried Leaves"]
+        self.animals = ["Bird", "Sheep"]
         self.description = "A whole load of nothing but grass."
         super().__init__(self.place, self.resources, self.animals, self.description)
 
