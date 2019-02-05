@@ -30,7 +30,8 @@ class Forest(Region):
 
         self.description = "Full of trees."
 
-        super().__init__(self.place, self.resources, self.animals, self.description)
+        super().__init__(self.place, self.resources, self.animals,
+                         self.description)  # initialise region class with our data
 
 
 class River(Region):

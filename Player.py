@@ -1,8 +1,7 @@
 import time
 
 
-class player:
-
+class Player:
     def __init__(self, name):
         self.name = name
         self.health = 100
@@ -10,18 +9,18 @@ class player:
 
     def decrease_health(self, amount):
         if self.health <= amount:
-            print("Oh no {}! You died and lost the game!".format(self.name))
+            print(f"Oh no {self.name}! You died and lost the game!")
             time.sleep(20)
             exit()
         self.health = self.health - amount
-        print("{}, your health is now {}!".format(self.name, self.health))
+        print(f"{self.name}, your health is now {self.health}!")
 
     def increase_health(self, amount):
         self.health += amount
-        print("{}, your health is now {}!".format(self.name, self.health))
+        print(f"{self.name}, your health is now {self.health}!")
         if self.health > 100:
             self.health = 100
-            print("{}, you are full health!".format(self.name))
+            print(f"{self.name}, you are at full health!")
 
     def increase_hunger(self, amount):
         if self.health < 100:
@@ -30,8 +29,7 @@ class player:
         else:
             self.hunger += amount
         if self.hunger > 100:
-            print("{}, you are to bloated! You lose {} health!".format(
-                self.name, amount))
+            print("{self.name}, you are too bloated! You lose {amount} health!")
             self.hunger = 100
             self.health -= amount
 
@@ -42,8 +40,7 @@ class player:
 
     def turnly_decrease(self):
         self.decrease_hunger(3)
-        print("{}, your hunger is now {}!".format(self.name, self.hunger))
+        print(f"{self.name}, your hunger is now {self.hunger}!")
         if self.hunger < 5:
             self.decrease_health(2)
-            print("Oh no {}, you are hungry. Your health is now {}".format(
-                self.name, self.health))
+            print(f"Oh no {self.name}, you are hungry. Your health is now {self.health}")
